@@ -237,8 +237,6 @@ SIP.Subscription.prototype = {
           switch (sub_state.reason) {
             case 'deactivated':
             case 'timeout':
-              this.terminateDialog();
-              this.request = new SIP.OutgoingRequest(this.method, this.request.to.uri.toString(), this.ua, null, this.extraHeaders.slice());
               this.subscribe();
               return;
             case 'probation':
